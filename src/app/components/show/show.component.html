@@ -1,0 +1,25 @@
+<div class="d-grid gap-2 mt-4">
+    <a routerLink="/create" class="btn btn-primary" type="button">Create</a>
+</div>
+
+<table class="table table-hover table-striped">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th>Type</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let guitar of guitars">
+            <th>{{guitar.type}}</th>
+            <th>{{guitar.brand}}</th>
+            <th>{{guitar.model}}</th>
+            <th>
+                <button routerLink="/edit/{{guitar.id}}" class="btn btn-outline-secondary"><i class="fa-solid fa-file-pen"></i></button>
+                <button (click)="deleteRecord(guitar.id)" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+            </th>
+        </tr>
+    </tbody>
+</table>

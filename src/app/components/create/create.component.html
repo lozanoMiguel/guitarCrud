@@ -1,0 +1,15 @@
+<form [formGroup]="guitarForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="mb-3">
+        <label class="form-label">Type</label>
+        <input type="text" formControlName="type" class="form-control" required="">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Brand</label>
+        <input type="text" formControlName="brand" class="form-control" required="">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Model</label>
+        <input type="text" formControlName="model" class="form-control" required="">
+    </div>
+    <button [disabled]="!guitarForm.valid" type="submit" class="btn btn-primary">Store</button>
+</form>
